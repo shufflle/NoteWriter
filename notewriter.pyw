@@ -5,7 +5,7 @@ from tkinter import filedialog
 # default font, change it if you wanna
 actualfont = "Bahnschrift"
 # version tag
-nwversion = "1.0 test3"
+nwversion = "1.0"
 
 def aboutbox():
     messagebox.showinfo("About", "NoteWriter " + nwversion + ", 2022-25 bezepik");
@@ -94,6 +94,9 @@ def res6():
 def res7():
     root.geometry("1750x1150")
 
+def res8():
+    root.geometry("250x150")
+
 root = tk.Tk()
 root.title("NoteWriter " + nwversion)
 root.geometry("1000x600")
@@ -127,7 +130,8 @@ theme_menu.add_command(label="Sky", command=bmode)
 theme_menu.add_command(label="Hell", command=hmode)
 
 res_menu = tk.Menu(menu_bar, tearoff=0, bg="black", fg="white")
-res_menu.add_command(label="5x3 (why?)", command=res1)
+res_menu.add_command(label="5x3", command=res1)
+res_menu.add_command(label="250x150", command=res8)
 res_menu.add_command(label="500x300", command=res2)
 res_menu.add_command(label="750x450", command=res5)
 res_menu.add_command(label="1000x600 (Default)", command=res3)
