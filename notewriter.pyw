@@ -5,7 +5,7 @@ from tkinter import filedialog
 # default font, change it if you wanna
 actualfont = "Bahnschrift"
 # version tag
-nwversion = "1.0"
+nwversion = "1.1 dev1"
 
 def aboutbox():
     messagebox.showinfo("About", "NoteWriter " + nwversion + ", 2022-25 bezepik");
@@ -13,7 +13,7 @@ def aboutbox():
 # things for files
 def opentxt():
     messagebox.showwarning("Warning", "You'll lose your document if you had forgot to save.");
-    file_path = filedialog.askopenfilename(defaultextension=".txt", filetypes=[("Text Documents", "*.txt"), ("All Files", "*.*")])
+    file_path = filedialog.askopenfilename(defaultextension=".txt", filetypes=[("Text Documents", "*.txt"), ("NoteWriter Documents", "*.ntwr"), ("All Files", "*.*")])
     if file_path:
         with open(file_path) as file:
             text_area.delete(1.0, tk.END)
@@ -21,7 +21,7 @@ def opentxt():
             print("opened file")
 
 def savetxt():
-    file_path = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text Documents", "*.txt"), ("All Files", "*.*")])
+    file_path = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text Documents", "*.txt"), ("NoteWriter Documents", "*.ntwr"), ("All Files", "*.*")])
     if file_path:
         with open(file_path) as file:
             file.write(text_area.get(1.0, tk.END))
