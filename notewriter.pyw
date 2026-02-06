@@ -8,9 +8,10 @@ actualfont = "Bahnschrift"
 nwversion = "1.1 dev1"
 
 def aboutbox():
-    messagebox.showinfo("About", "NoteWriter " + nwversion + ", 2022-25 bezepik");
+    messagebox.showinfo("About", "NoteWriter " + nwversion + ", 2022-25 Shufflle");
     
 # things for files
+# .ntwr is the file format for notewriter documents, so far it's just a renamed .txt file
 def opentxt():
     messagebox.showwarning("Warning", "You'll lose your document if you had forgot to save.");
     file_path = filedialog.askopenfilename(defaultextension=".txt", filetypes=[("Text Documents", "*.txt"), ("NoteWriter Documents", "*.ntwr"), ("All Files", "*.*")])
@@ -19,11 +20,12 @@ def opentxt():
             text_area.delete(1.0, tk.END)
             text_area.insert(tk.END, file.read())
             print("opened file")
-
+# this piece of shit code doesn't work
+# nevermind, fixed it because i somehow deleted this one bit
 def savetxt():
     file_path = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text Documents", "*.txt"), ("NoteWriter Documents", "*.ntwr"), ("All Files", "*.*")])
     if file_path:
-        with open(file_path) as file:
+        with open(file_path, "w") as file:
             file.write(text_area.get(1.0, tk.END))
             print("saved file")
 
@@ -97,10 +99,12 @@ def res7():
 def res8():
     root.geometry("250x150")
 
+# vital shit, do not delete this or i will delete you
 root = tk.Tk()
 root.title("NoteWriter " + nwversion)
 root.geometry("1000x600")
 
+# end of vital shit
 text_area = tk.Text(root, font=(actualfont, "16"), bg="#191919", fg="white",)
 text_area.pack(expand=True, fill=tk.BOTH)
 
@@ -147,4 +151,4 @@ menu_bar.add_cascade(label="Resolution", menu=res_menu)
 menu_bar.add_cascade(label="Other", menu=other_menu)
 
 root.mainloop()
-# you can also edit notewriter in notewriter because idfk
+# you can also edit notewriter in notewriter because i don't fucking know
