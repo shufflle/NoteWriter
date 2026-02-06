@@ -5,10 +5,10 @@ from tkinter import filedialog
 # default font, change it if you wanna
 actualfont = "Bahnschrift"
 # version tag
-nwversion = "1.1 dev1"
+nwversion = "1.1 dev2"
 
 def aboutbox():
-    messagebox.showinfo("About", "NoteWriter " + nwversion + ", 2022-25 Shufflle");
+    messagebox.showinfo("About", "NoteWriter " + nwversion + ", 2022-26 Shufflle \nThis software is free to use and open source.");
     
 # things for files
 # .ntwr is the file format for notewriter documents, so far it's just a renamed .txt file
@@ -56,6 +56,10 @@ def bahnfont():
 
 def timesfont():
     actualfont = "Times New Roman"
+    text_area.config(font=(actualfont, "16"))
+
+def helveticafont():
+    actualfont = "Helvetica Regular"
     text_area.config(font=(actualfont, "16"))
 
 def lmode():
@@ -126,6 +130,7 @@ font_menu.add_command(label="Eras Demi ITC", command=erasfont)
 font_menu.add_command(label="Franklin Gothic", command=frankfont)
 font_menu.add_command(label="Comic Sans", command=comicfont)
 font_menu.add_command(label="Times New Roman", command=timesfont)
+font_menu.add_command(label="Helvetica", command=helveticafont)
 
 theme_menu = tk.Menu(menu_bar, tearoff=0, bg="black", fg="white")
 theme_menu.add_command(label="Brightness", command=lmode)
