@@ -1,6 +1,6 @@
 # NoteWriter
 An open-source notepad made using Python.
-(NOTE: I didn't abandon this project, for some reason the GitHub app decided to stop working and that's why I haven't been able to make some commits is the past couple months)
+(NOTE: I didn't abandon this project, for some reason the GitHub app decided to stop working and that's why I haven't been able to make some commits in the past couple months)
 ***
 ## How to download
 To use this, you ***must*** have a version of Python that supports Tkinter.\
