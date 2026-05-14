@@ -1,5 +1,5 @@
 # NoteWriter
-An open-source notepad made using Python.
+An open-source notepad made using Python. (all in one file!)
 ***
 ## How to download
 To use this, you ***must*** have a version of Python that supports Tkinter.\
